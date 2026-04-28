@@ -118,6 +118,7 @@ async function doSignup() {
     );
 
     showToast('🎉 Registration Successful!', 'success');
+    console.log(res);
 
     setTimeout(() => {
       setActiveTab('login');
