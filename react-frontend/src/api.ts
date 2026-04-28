@@ -1,4 +1,4 @@
-var BASE_URL = 'http://localhost:8080';
+var BASE_URL = 'https://quantitymeasurementapp-production-fabc.up.railway.app/';
 
 // ── Login ────────────────────────────────────────────────────────
 export async function loginApi(email: string, password: string) {
