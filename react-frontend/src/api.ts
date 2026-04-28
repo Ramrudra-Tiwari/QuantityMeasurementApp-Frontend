@@ -1,8 +1,8 @@
-var BASE_URL = 'https://quantitymeasurementapp-production-fabc.up.railway.app/';
+var BASE_URL = 'http://localhost:8080';
 
 // ── Login ────────────────────────────────────────────────────────
 export async function loginApi(email: string, password: string) {
-  var response = await fetch(`${BASE_URL}/api/v1/auth/login`, {
+  var response = await fetch(BASE_URL + '/api/v1/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ export async function loginApi(email: string, password: string) {
 
 // ── Register ─────────────────────────────────────────────────────
 export async function registerApi(name: string, email: string, password: string, mobileNumber: string) {
-  var response = await fetch(`${BASE_URL}/api/v1/auth/login`, {
+  var response = await fetch(BASE_URL + '/api/v1/auth/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ export async function divideApi(payload: any) {
 export async function getHistoryApi() {
   var token = localStorage.getItem('qm_token');
 
-  var response = await fetch(`${BASE_URL}` + '/api/v1/quantities/history/operation/compare', {
+  var response = await fetch(BASE_URL + '/api/v1/quantities/history/operation/compare', {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + token
